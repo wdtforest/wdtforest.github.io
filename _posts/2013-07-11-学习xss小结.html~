@@ -1,0 +1,56 @@
+---
+layout: post
+category: knowledge
+tags: [xss]
+---
+<p>看了看xss，小小的学习一下，正好今天做了一下总结。</p>
+<p>个人感觉xss就是构造语句吧，基于网站上互动较强的代码构造出能够存储在网站上的代码，
+利用这个来搞一些有趣的事情。主要的javascript构造有：</p>
+    <p>onxxxx="alert(1);"</p>
+	<p>href="javascript:alert(1);"</p>
+	<p>&#60;script>alert(1);</script></p>
+<p>由于xss建立在网页脚本的输入和输出上，所以一般对xss的防御主要就在输入输出的过滤上。
+下面说说我看到的几个xss,所有测试均用alert(1)进行注入测试：</p>
+<p>1.简单到不要命的输入输出都没过滤的；</p>
+         <p>简单来说就是“<>"都没有过滤，然后把自己输入的东西提交上去还会原文显示在页
+    面上，并且观察其代码，输出在两个标签之间，或者html标签内，美其名曰；吃什么拉
+	什么。好吧，搞一下：</p>
+	     <p>输入修改成<img src=1 onerror="alert(1)" ></p>
+    目前的浏览器基本把onerror这个东西过滤掉了，利用率不大，胜在简单入门。也可以这
+	样&#60;script>alert(1);</script>，但是这样根本没过滤可以直接xss的情况不多。</p>
+	
+<p>2.在其他奇怪的标签里，同样没有过滤；</p>
+   <p>      可以构造奇怪的语句，一般输入会赋值给某个value，去源码里看一下语句结构，比
+	如说我输入一个字符s，源码里这样显示：</p>
+	<input type="text" name="p1" size="50" value=""> 
+<p>	我们可以构造这样的输入：">&#60;script>alert(1)</script></p>
+	<p>这样就会得到这样的源码：</p>
+	<p><input type="text" name="p1" size="50" value="">&#60;script>alert(1)</script>
+	
+<p>3.有一些页面的交互中会对某些标签的过滤放松警惕。</p>
+<p>         比如说select标签，提交时，post中仍然会含有这个select的value。所以我们可以
+	把post请求拦截下来进行修改。对于某些限定输入长度的input同样可以用此方法绕过。拦
+	截修改绕过了一大批英雄好汉。</p>
+
+<p>4.有的输入只在标签里存在。</p>
+<p>         这时候就要利用到标签的属性了，比如说这样的语句</p>
+<p>	<input type="text" name="p1" size="60" value="">
+<p>	如果我们按照第2种情况进行输入，会发现< > 会被转义</p>
+<p>	<input type="text" name="p1" size="50" value=""&gt;&lt;script&gt;&lt;/script&gt;"></p>
+<p>	所以要利用到标签的事件属性，输入：" onmouseover="alert(1);" x="</p>
+<p>	这样就构造成了</p>
+<p>	<input type="text" name="p1" size="50" value="" onclick="alert(1);" x=""></p>
+<p>    还有一点就是html标签属性里会对实体字符进行自动转义，比如说</p>
+<p>	<img src="1" onerror="alert(1)"></p>
+<p>    <img src="1" onerror="alert&#x28;1&#x29;"> 是等效的，换言之如果没有过滤&，#等符号</p>
+	即可写入任意字符。而css里面允许\+ASCII16进制表示字符，同样可以绕过某些字符串过滤。
+	当"被过滤时，可以利用\来进行改造，js代码可以用unicode或者base 16绕过字符串过滤。
+	可以适当调整编码来绕过符号过滤，比如utf-7</p>
+	
+<p>5.iframe是个好东西</p>
+<p>    <iframe onload="alert(1)"></iframe></p>
+<p>	<iframe src="javascript:alert(1)"</iframe></p>
+<p>	<iframe src="vbscript:msgbox(1)"></iframe></p>
+	
+	<p>简单的xss也就理解到这里，也仅限于知道什么是xss，简单的xss攻击是怎么实现的而已，再接
+再厉。</p>
