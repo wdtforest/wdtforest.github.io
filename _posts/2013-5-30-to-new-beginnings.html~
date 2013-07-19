@@ -1,0 +1,26 @@
+---
+layout: post
+category : thoughts
+tagline: And new possibilities!
+tags : [new site, manavdhiman, new blog, blog]
+---
+{% include JB/setup %}
+
+<p>It's almost been a year since my last blog went offline due to several personal and work related issues.</p>
+
+<h2>The Past Year</h2>
+<p>The past year I've been busy with college and a lot of work. At first it was an overwhelming feeling looking at the amount of assignments we had to finish in one day. Later, as the time passed by, the experience got kind of more comfortable. The amount of assignments was still the same, but the environment became more relaxed.</p>
+
+<h2>This Website</h2>
+<p>The plans for a renewed and revamped website were in the works throughout the past year. It wasn't until in May that I actually got to building it.</p>
+<p>For people who are familiar with my previous blog, will find many similarities between this design and the one I had before this. This is like a more advanced version of it. Fully handcoded.</p>
+<p>For people who liked my previous design and like this one, can still download the child theme for <a href="http://diythemes.com">Thesis Theme Framework</a> for WordPress <a href="http://bit.ly/valotheme">here</a> (the instructions can be found in the Readme file).You can also fork it on <a href="https://github.com/manavdhiman/Valo---Child-Theme-for-Thesis/">GitHub</a>. Gosh! It feels as if I made it 10 years ago! The nostalgia.</p>
+<p>A lot of things being planned right now rgarding Valo's future. Let's see how it goes.</p>
+
+<h2>What's This For?</h2>
+<p>This website will have my design work and my writing work on different subjects. It will be my blog. It will be my portfolio.</p>
+<p>This isn't complete yet, there's a lot to do.</p>
+<p>That's all for now. Will keep updating this site like I used to. :)</p>
+
+<span>NOTE:</span><p>If you want to fork this design on Github, do so <a href="https://github.com/manavdhiman/manavdhiman.github.com">here</a>.</p>
+

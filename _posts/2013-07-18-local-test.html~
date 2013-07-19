@@ -1,0 +1,9 @@
+---
+layout: post
+category : thoughts
+tagline: And new possibilities!
+tags : [new site, manavdhiman, new blog, blog]
+---
+{% include JB/setup %}
+
+<p>话说只是在本地测试一下啊</p>

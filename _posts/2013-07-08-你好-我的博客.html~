@@ -1,0 +1,11 @@
+---
+layout: post
+category: law of attraction
+tags : [life, think]
+---
+{% include JB/setup %}
+<p>  我第一个简单的个人博客终于搭好了。首先感谢在我搭建博客中，给予我帮助的可爱的朋友们。</p>
+<p>最开始只是一个人默默的写总结，然后被<a href="http://blog.sandtears.com/">@sandtears</a>大神发现，在他的的怂恿下，鼓起勇气搭建自己的博客，把自己的收获与大家分享，希望大家多多指教。</p>
+<p>在<a href="http://www.haroquee.me/">@JOkerlin</p>的热心指导下，我的博客终于搭建成功了。首先通过<a href="http://github.com/">Github</a>帐号的个人主页功能得到了一个二级域名（苦逼没技术程序员买不起域名。。。）。使用<i>Jekyll+Markdown</i>，并且参照了一些模版，打造出这个功能不全，土的掉渣的小博客。
+<p>但是心里还是蛮开心的，哈哈。</p>
+

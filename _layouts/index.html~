@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700|Abril+Fatface' rel='stylesheet' type='text/css'>
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="/styles/index.css">
+
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>繁木成林</h1>
+      <div id="tagline">分享 &AMP; 自由 &AMP; 收获</div>
+    </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        <div id="intro">这是一个<span>学习型</span> 博客，他记录了我最近的<span>学习日志</span> 和一些<span>有趣的分享</span>。</div>
+        <!--Second intro-->
+        <div class="second-intro">
+          <div id="i">不积硅步，无以至千里</div>
+        </div>
+      </div>
+
+      <nav>
+      <ul>
+	    <li><a href="/about.html">关于</a></li>
+        <li><a href="/writing.html">文章</a></li>
+      </ul>
+    </nav>
+      <footer>
+        <p>
+          MADE WITH THE HELP OF <a href="http://jekyllbootstrap.com" target="_blank">JEKYLL</a> &amp; <a href="http://www.google.com/fonts/" target="_blank">GOOGLE WEB FONTS</a> ON <a href="http://github.com" target="_blank">GITHUB</a>.
+        </p>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+        </p>
+      </footer>
+    </div>
+    {% include JB/analytics %}
+  </body>
+</html>
